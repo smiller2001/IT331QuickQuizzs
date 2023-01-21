@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Quick Quizzes</title>
+
+        <!-- Load external CSS styles -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+
+
+<body>
+
+<div class="topnav">
+  <a href="./fandom.html">Fandom Quizzes</a> 
+  <a href="./lifeq.html">Life Quizzes</a>
+  <a href="./about.html">About Quick Quizzes</a>
+  <a href="./login.html">Log In/Create An Account</a>
+</div>
+<h1><a href="./index.html">Welcome to Quick Quizzes</a></h1>
+<p>Take our personality quizzes and learn about yourself!</p>
+<p> Try our favorites!</p>
+
+    <a href="./fandom.html">Who's your Godly Parent? (Not a real quiz yet)</a><br>
+    <a href="./fandom.html">Would you survive a Supernatural episode? (Not a real quiz yet)</a><br>
+    <a href="./lifeq.html"> What fantasy creature are you? (Not a real quiz yet)</a><br>
+    <a href="./lifeq.html">What Lyric from Taylor Swift's Midnight are you? (Not a real quiz yet)</a><br>
+<script>
+var arrayImg = new Array();
+arrayImg[0] = "pic1.jpg";
+arrayImg[1] = "pic2.jpg";
+arrayImg[2] = "pic3.jpg";
+arrayImg[3] = "pic4.jpg";
+arrayImg[4] = "pic5.jpg";
+arrayImg[5] = "pic6.jpg";
+
+var altAr = new Array();
+altAr[0] = "The parthenon in Greece";
+altAr[1] = "Empty theatre with stage lights on and red seats";
+altAr[2] = "Wheat stalks";
+altAr[3] = "Winding road between trees";
+altAr[4] = "Purple lighted dj booth";
+altAr[5] = "Alien in a spaceship" ;
+
+
+getRandomImage(arrayImg,altAr, "");
+
+function getRandomImage(imgAr, altAr, path) {
+  //  path = path || 'http://fpoimg.com/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var alt = altAr [ num ]; 
+    var imgStr = '<img src="' + path + img + '"id = "pic" alt = '+ alt +'" height = "500px" width="500px">';
+    document.write(imgStr); document.close();
+}
+</script>
+
+<footer> This website is created for an educational project. Certain materials may be included under the fair use exemption of the U.S Copyright Law and have prepared according to the multimedia fair use guidelines and are restricted from further use. </footer>
+
+    </body>
+
+</html>

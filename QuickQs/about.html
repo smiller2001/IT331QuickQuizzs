@@ -1,0 +1,71 @@
+  <!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About</title>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css"/>
+        <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+        <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+        <link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
+		<script src="../lib/jquery.js"></script>
+		<script src="../dist/jquery.validate.js"></script>
+    	<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+    	<script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
+    </head>
+<body>
+<div class="topnav">
+  <a href="./fandom.html">Fandom Quizzes</a> 
+  <a href="./lifeq.html">Life Quizzes</a>
+  <a href="./about.html">About Quick Quizzes</a>
+  <a href="./login.html">Log In/Create An Account</a>
+</div>
+<h1><a href="./index.html">Welcome to our Fandom Quizzes</a></h1>
+<p> We are a website dedicated to housing quizzes for everyone! New quizzes are added every week so check back often!</p>
+<p> We value your feedback!</p>
+<p> Is it urgent? Shoot us an <a href="mailto:smille78@gmu.edu">email!</a></p>
+<form>
+	<fieldset>
+    <legend>Give us your suggestions!:</legend>
+		<p>
+	<label for="fname">First Name (required, at least 2 characters)</label>
+<input id="fname" name="name" minlength="2" type="text" required>
+</p>
+		<p>
+		<label for="lname">Last Name (required, at least 2 characters)</label>
+<input id="lname" name="lname" minlength="2" type="text" required>
+</p>
+  <p>
+<label for="cemail">E-Mail (required)</label>
+<input id="cemail" type="email" name="email" required>
+</p>
+  <p>What kind of quizzes do you want to see more of?</p>                     
+  <input type="checkbox" id="quiz1" name="quiz1" value="Fandoms">
+  <label for="quiz1"> Fandoms</label><br>
+  <input type="checkbox" id="quiz2" name="Lifestyles" value="Lifestyle">
+  <label for="quiz2"> Lifestyles</label><br><br><br>
+	<label for="agree">Prove you're not a bot</label>
+<input type="checkbox" class="checkbox" id="agree" name="agree" required>
+<textarea> We want your feedback and suggestions!</textarea>
+ </fieldset>
+  Please enter today's date: <input type="text" id="Datepicker1" required> <br>
+  <input type="submit" value="Submit">
+</form> 
+<a href="./about.html">Back to top</a>
+<script type="text/javascript">
+$(function() {
+	$( "#Datepicker1" ).datepicker(); 
+});
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+	$().ready(function() {
+		// validate the comment form when it is submitted
+		$("#commentForm").validate();
+
+	</script>		
+</body>
+</html>

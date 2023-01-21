@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html><head>
+        <meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <title>Quick Quizzes</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+	<script>
+	
+	</script>
+    </head>
+<body>
+       var name = localStorage.getItem("firstName");
+       document.write("Welcome to Quick Quizzes,"+name+"!"); <br>
+ 
+<script>
+$( document.body ).click(function() {
+  $( "div:hidden" ).first().fadeIn( "slow" );
+});
+
+var arrayImg = new Array();
+arrayImg[0] = "pic1.jpg";
+arrayImg[1] = "pic2.jpg";
+arrayImg[2] = "pic3.jpg";
+arrayImg[3] = "pic4.jpg";
+arrayImg[4] = "pic5.jpg";
+arrayImg[5] = "pic6.jpg";
+
+var altAr = new Array();
+altAr[0] = "The parthenon in Greece";
+altAr[1] = "Empty theatre with stage lights on and red seats";
+altAr[2] = "Wheat stalks";
+altAr[3] = "Winding road between trees";
+altAr[4] = "Purple lighted dj booth";
+altAr[5] = "Alien in a spaceship" ;
+
+
+getRandomImage(arrayImg,altAr, "");
+	
+function getRandomImage(imgAr, altAr, path) {
+  //  path = path || 'http://fpoimg.com/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var alt = altAr [ num ]; 
+    var imgStr = '<img src="' + path + img + '"id = "pic" alt = '+ alt +'" height = "500px" width="500px">';
+    document.write(imgStr); document.close();
+}
+	//fade out
+	$( "img" ).click(function() {
+  $( "img" ).fadeOut( "slow" );
+});
+var myVar = setInterval(function() {
+  enlargeImg()
+}, 1000);
+
+function enlargeImg() {
+  var value, img = document.getElementById("pic");
+  if (img.style.width === '100px')
+    value = '250px';
+  else
+    value = '100px';
+  img.style.width = value;
+  img.style.height = value;
+}
+
+function keepImg() {
+  clearInterval(enlargeImg);
+}
+	</script>
+	<p> Click on the picture! Watch it fade away!</p>
+</body>
+</html>

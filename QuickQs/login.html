@@ -1,0 +1,154 @@
+  <!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Account</title>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+		<script src="jquery.js"></script>
+		<script src="jquery.validate.js"></script>
+    <script>
+function store(){ //starts storing items in the localStorage
+		var input = document.getElementById("name").value;
+		localStorage.setItem("firstName", input);
+}
+
+function clearStorage(){ //clears the entire localStorage
+    localStorage.clear()
+    console.log("clear records");
+}
+
+window.onload =function(){ //ensures the page is loaded before functions are executed.
+    document.getElementById("newAccount").onsubmit = store;
+    document.getElementById("clearButton").onclick = clearStorage;
+}
+//separating old from new js
+
+function mouseOver( e )
+{  
+   if ( e.target.tagName.toLowerCase() == "h1" )
+   {
+      e.target.setAttribute( "style", 
+         "color: blue ");
+   } // end if
+} // end function mouseOver
+
+function mouseOut( e )
+{
+   // if the element is an li, assign its id to innerHTML
+   // to display the color name
+   if ( e.target.tagName.toLowerCase() == "h1" )
+   {
+      e.target.setAttribute( "style", 
+         "color: white ");
+   } // end if
+} // end function mouseOut
+
+function deleteImg()
+{
+	let firstImage = document.getElementById("pic");
+      firstImage.remove();
+}
+
+function changeStyle()
+{
+	var element = document.getElementsByTagName("body");
+      document.body.style.background = "#FFD2A5";
+}
+//document.addEventListener ("click", changeStyle, false);
+//document.addEventListener( "click", deleteImg, false );
+document.addEventListener( "mouseover", mouseOver, false );
+document.addEventListener( "mouseout", mouseOut, false );
+		</script>
+
+   
+</head>
+
+<body>
+<!--menu-->
+<div class="topnav">
+  <a href="./fandom.html">Fandom Quizzes</a> 
+  <a href="./lifeq.html">Life Quizzes</a>
+  <a href="./about.html">About Quick Quizzes</a>
+  <a href="./login.html">Log In/Create An Account</a>
+</div>
+<h1><a href="./index.html">Welcome to our Quick Quizzes</a></h1>
+	<p> Create a New Account!</p>
+	
+<!--create a new account-->
+        <form id="newAccount">
+            <label for="name" >Name)</label>
+            <input type="text" id="name"  ><br>
+            <label for="usern" >Username</label>
+            <input type="text" id="usern"><br><br>
+            <label for="pword" >Password</label>
+            <input type="password" id="pword"><br><br>
+            <button class="submit" onClick="window.open('./welcome.html'); store();">Submit</button>
+
+        </form>
+        <br>
+        <br>
+	<p id="demo">Click Here to see some fun facts!</p>
+
+		<button type="button" onclick="loadDoc()">Fun Facts?</button>
+	
+	<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_fun_facts.txt", true);
+  xhttp.send();
+}
+</script>
+<!--login to old account-->
+<p> Or sign in! </p>
+        <br>
+		            <label for="username" >Username</label>
+            <input type="text" id="username"><br>
+            <label for="pass" >Password</label>
+            <input type="text" id="pass"><br>
+			<label for="agree">Let me know you're not a bot!</label>
+			<input type="checkbox" class="checkbox" id="robot" name="agree"><br>
+        <br>
+		<button type="submit">Submit</button>
+<!--delete an old account-->
+        <button id="clearButton">Clear</button>
+
+  <!--display the image from array-->
+<script>
+var arrayImg = new Array();
+arrayImg[0] = "pic1.jpg";
+arrayImg[1] = "pic2.jpg";
+arrayImg[2] = "pic3.jpg";
+arrayImg[3] = "pic4.jpg";
+arrayImg[4] = "pic5.jpg";
+arrayImg[5] = "pic6.jpg";
+
+var altAr = new Array();
+altAr[0] = "The parthenon in Greece";
+altAr[1] = "Empty theatre with stage lights on and red seats";
+altAr[2] = "Wheat stalks";
+altAr[3] = "Winding road between trees";
+altAr[4] = "Purple lighted dj booth";
+altAr[5] = "Alien in a spaceship" ;
+
+
+getRandomImage(arrayImg,altAr, "");
+
+function getRandomImage(imgAr, altAr, path) {
+  //  path = path || 'http://fpoimg.com/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var alt = altAr [ num ]; 
+    var imgStr = '<img src="' + path + img + '"id = "pic" alt = '+ alt +'" height = "500px" width="500px">';
+    document.write(imgStr); document.close();
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+ <!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:spry="http://ns.adobe.com/spry">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Quick Quizzes</title>
+        <link rel="stylesheet" href="styles.css"/>
+	<link type="text/css" rel="stylesheet" href="css/global.css" media="screen, projection" />
+	<link type="text/css" rel="stylesheet" href="css/events.css" media="screen, projection" />
+	<link type="text/css" rel="stylesheet" href="css/SpryMenuBarHorizontal_Events.css"/>
+	<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+	<script>
+	var titles = new Spry.data.XMLDataSet("./fandom.xml", "quizzes/questions");
+	</script>
+    </head>
+<body>
+
+<div class="topnav">
+  <a href="./fandom.html">Fandom Quizzes</a> 
+  <a href="./lifeq.html">Life Quizzes</a>
+  <a href="./about.html">About Quick Quizzes</a>
+  <a href="./login.html">Log In/Create An Account</a>
+</div>
+<h1><a href="./index.html">Welcome to our Fandom Quizzes</a></h1>
+<p>Wanna know who's your godly parent? Your Hogwarts house? Which member of BTS would fall in love with you?</p>
+<p> Try our favorites!</p>
+<ul>
+  <li> <a href="./fandom.html">Who's Your Godly Parent?</a> <br>
+	<img src="pic1.jpg" alt="the parthenon in Greece" style="width:30%; height:50%"><br>
+	<p>Photo by <a href="https://unsplash.com/@zhoup?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Peter Zhou</a> on <a href="https://unsplash.com/s/photos/parthenon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </p></li>
+    <li> <a href="./fandom.html">Would you survive Idol Training?</a> <br>
+	<img src="pic2.jpg" alt="Empty theatre with stage lights on and red seats" style="width:30%; height:50%"><br>
+	<p>Photo by <a href="https://unsplash.com/@lighttouchedphotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Schmid</a> on <a href="https://unsplash.com/s/photos/stage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </p></li>
+	 <li> <a href="./fandom.html">What's your job in the Maze Runner?</a> <br>
+	<img src="pic3.jpg" alt="Wheat stalks" style="width:30%; height:50%"><br>
+	<p>Photo by <a href="https://unsplash.com/@10re?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yipeng Lin</a> on <a href="https://unsplash.com/s/photos/the-maze?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </p> 
+<p>  </p>
+
+			<!-- **************************************
+			Begin Spry Product Table
+			*************************************** -->
+			<div id="content1">
+			<div spry:region="dsEvents">
+<table id="questions">
+	<tbody>
+	<tr spry:repeat="dsEvents" spry:setrow="dsEvents">
+	   <th scope="col">Want to submit an idea for a quiz? Make sure it falls under the fandom category using this handy chart!</th>
+		<td>{question}</td>
+		<td>{yorn}</td>
+		<td>{answer}</td>   
+	</tr>
+	</tbody>
+</table>	
+<div spry:detailregion="fandom.xml"</div>
+</div>
+</div>
+			<!-- **************************************
+			close Spry Product Table
+			*************************************** -->
+			
+		</div><!-- close full_column -->
+
+	<a href="./fandom.html">Back to top</a>
+    </body>
+
+</html>
